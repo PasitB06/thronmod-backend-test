@@ -29,14 +29,14 @@ app.use('/api/v1/reservation',reservation);
 
 
 const PORT = process.env.PORT || 5001;
-const server = app.listen(
-  PORT,
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(
     "Server running in",
     process.env.NODE_ENV,
-    "on http://localhost:" + PORT
-  )
-);
+    "on http://0.0.0.0:" + PORT
+  );
+});
+
 
 const swaggerOptions={
   swaggerDefinition:{
